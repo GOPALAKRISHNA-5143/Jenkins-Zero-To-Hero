@@ -7,7 +7,7 @@ pipeline {
         stage ('stage1') {
             steps {
                 echo 'Hello world this is first pipeline project'
-                echo "This course is for ${x}"
+                echo 'This course is for ${x}'
             }
         }
     }
