@@ -1,14 +1,15 @@
 pipeline {
     agent any
     environment {
-        x = 'Devops'
+        CC = 'clang'
     }
     stages {
-        stage ('stage1') {
+        stage('Example') {
+            environment {
+                DEBUG_FLAGS = '-g'
+            }
             steps {
-                echo 'Hello world this is first pipeline project'
-                echo "This course is for ${x}"
-                echo "Build id - ${env.BUILD_ID}, Build number- ${env.BUILD_NUMBER}, jenkins url - ${JENKINS_URL}, job name - ${env.JOB_NAME}, workspace ${env.WORKSPACE}"
+                sh 'printenv'
             }
         }
     }
