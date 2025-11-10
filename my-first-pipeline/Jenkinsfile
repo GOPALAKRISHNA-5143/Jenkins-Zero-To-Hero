@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Hello world this is first pipeline project'
                 echo "This course is for ${x}"
-                echo "Build id - ${env.BUILD_ID}, Build number- ${env.BUILD_NUMBER}, jenkins url - ${JENIKINS_URL}"
+                echo "Build id - ${env.BUILD_ID}, Build number- ${env.BUILD_NUMBER}, jenkins url - ${JENKINS_URL}"
             }
         }
     }
