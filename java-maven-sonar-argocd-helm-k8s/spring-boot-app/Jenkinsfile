@@ -9,6 +9,14 @@ pipeline {
         stage ('Checkout') {
             steps {
                 checkout scm
+                echo "success"
+            }
+        }
+        stage('Build') {
+            steps {
+                dir (java-maven-sonar-argocd-helm-k8s/spring-boot-app) {
+                    mvn clean package -DskipTests 
+                }
             }
         }
     }
