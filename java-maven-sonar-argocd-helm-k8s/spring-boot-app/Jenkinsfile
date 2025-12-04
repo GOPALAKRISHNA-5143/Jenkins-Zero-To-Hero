@@ -14,18 +14,6 @@ pipeline {
                 }
             }
         }
-        stage('static code analysis') {
-            environment {
-                SONAR_URL = "http://54.82.24.192:9000"
-            }
-            steps {
-                withCredentials([string(credentialsId:'sonarqube', variable: 'SONAR_AUTH_TOKEN')]){
-                    dir('java-maven-sonar-argocd-helm-k8s/spring-boot-app') {
-                        sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
-                    }
-                }
-            }
-        }
         stage('Build & Push') {
             environment {
                 DOCKER_IMAGE = "krishna075/ultimate-cicd:${BUILD_NUMBER}"
