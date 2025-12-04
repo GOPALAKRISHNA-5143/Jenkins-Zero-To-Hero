@@ -33,7 +33,7 @@ pipeline {
             steps {
                 dir('java-maven-sonar-argocd-helm-k8s/spring-boot-app'){
                     script {
-                        dockerImage = docker.build("${DOCKER_IMAGE}", 'Dockerfile')
+                        dockerImage = docker.build("${DOCKER_IMAGE}",)
                         echo " Docker image is ${DOCKER_IMAGE}"
                     }
                 }
