@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Build & Push') {
             environment {
-                DOCKER_IMAGE = "krishna075/ultimate-ci-cd/${BUILD_NUMBER}"
+                DOCKER_IMAGE = "krishna075/ultimate-cicd/${BUILD_NUMBER}"
             }
             steps {
                 dir('java-maven-sonar-argocd-helm-k8s/spring-boot-app'){
