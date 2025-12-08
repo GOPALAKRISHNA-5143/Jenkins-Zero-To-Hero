@@ -29,7 +29,9 @@ pipeline {
                         trivy fs --exit-code 1 \
                         --severity HIGH,CRITICAL \
                         --format table \
-                        --output trivy-fs-report.txt . '''
+                        --output trivy-fs-report.txt \
+                        . 
+                        '''
                 }
             }
             
