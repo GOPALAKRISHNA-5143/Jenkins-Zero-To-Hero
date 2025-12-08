@@ -35,7 +35,12 @@ pipeline {
                 }
             }
             
-        }        
+        } 
+        post {
+            always {
+                archiveArtifacts artifacts: 'trivy-fs-report.txt'
+            }
+        }
         stage('Build & Push') {
             environment {
                 DOCKER_IMAGE = "krishna075/ultimate-cicd:${BUILD_NUMBER}"
