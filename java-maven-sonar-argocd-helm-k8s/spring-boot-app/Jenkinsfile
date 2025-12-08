@@ -27,7 +27,7 @@ pipeline {
                 dir ('java-maven-sonar-argocd-helm-k8s/spring-boot-app') {
                     sh '''
                         trivy fs --exit-code 1 \
-                        --severity HIGH, CRITICAL \
+                        --severity HIGH,CRITICAL \
                         --format table \
                         --output trivy-fs-report.txt . '''
                 }
